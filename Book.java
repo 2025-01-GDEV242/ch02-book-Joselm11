@@ -14,16 +14,19 @@ class Book
     private String title;
     private int pages;
     private String refNumber;
-
+    private int borrowed;
     /**
      * Set the author, title, and pages fields when this object
      * is constructed.
+     * reference number starts as empty string
+     * borrowed count begins at 0
      */
     public Book(String bookAuthor, String bookTitle, int bookPages) {
         author = bookAuthor;
         title = bookTitle;
         pages = bookPages;
         refNumber = "";
+        borrowed = 0;
     }
     
     // Add the methods here ...
@@ -45,14 +48,24 @@ class Book
         return refNumber;
     }
     
+    public int getBorrowed(){
+        return borrowed;
+    }
+    
     //setter
     public void setRefNumber(String ref) {
+        //needs 3 characters or else error
         if (ref.length() >= 3) {
             refNumber = ref;
         } 
         else {
             System.out.println("Error: Reference number must be at least 3 characters long!!!");
         }
+    }
+    
+    public void borrow() {
+        //increases borrowed count each time it is called
+        borrowed++;
     }
     //print methods
     public void printAuthor() {
@@ -68,11 +81,15 @@ class Book
         System.out.println("Author: " + author);
         System.out.println("Pages: " + pages);
         
+        //reference number length has to be more than 0 to print anything
         if (refNumber.length() > 0) {
             System.out.println("Reference Number: " + refNumber);
         } 
         else {
             System.out.println("ZZZ");
         }
+        
+        //borrowed amount
+        System.out.println("Times Borrowed: " + borrowed);
     }
 }
