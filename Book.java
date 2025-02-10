@@ -12,15 +12,15 @@ class Book
     // objects are not immutable because they do not have Final
     private String author;
     private String title;
-
+    private int pages;
     /**
-     * Set the author and title fields when this object
+     * Set the author, title, and pages fields when this object
      * is constructed.
      */
-    public Book(String bookAuthor, String bookTitle)
-    {
+    public Book(String bookAuthor, String bookTitle, int bookPages) {
         author = bookAuthor;
         title = bookTitle;
+        pages = bookPages;
     }
     
     // Add the methods here ...
@@ -32,6 +32,10 @@ class Book
     
     public String getTitle() {
         return title;
+    }
+    
+     public int getPages() {
+        return pages;
     }
     
     //print methods
