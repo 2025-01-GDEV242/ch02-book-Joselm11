@@ -9,6 +9,7 @@
 class Book
 {
     // The fields.
+    // objects are not immutable because they do not have Final
     private String author;
     private String title;
 
@@ -21,6 +22,14 @@ class Book
         author = bookAuthor;
         title = bookTitle;
     }
-
+    
     // Add the methods here ...
+    public String getAuthor() {
+        return author;
+    }
+    
+    public String getTitle() {
+        return title;
+    }
+    
 }
