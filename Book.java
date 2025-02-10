@@ -24,6 +24,8 @@ class Book
     }
     
     // Add the methods here ...
+    
+    //acessors
     public String getAuthor() {
         return author;
     }
@@ -32,4 +34,12 @@ class Book
         return title;
     }
     
+    //print methods
+     public void printAuthor() {
+        System.out.println("Author: " + author);
+    }
+
+    public void printTitle() {
+        System.out.println("Title: " + title);
+    }
 }
