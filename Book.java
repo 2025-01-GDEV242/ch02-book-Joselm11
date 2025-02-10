@@ -15,18 +15,20 @@ class Book
     private int pages;
     private String refNumber;
     private int borrowed;
+    private final boolean courseText;
     /**
      * Set the author, title, and pages fields when this object
      * is constructed.
      * reference number starts as empty string
      * borrowed count begins at 0
      */
-    public Book(String bookAuthor, String bookTitle, int bookPages) {
+    public Book(String bookAuthor, String bookTitle, int bookPages, boolean isCourseText) {
         author = bookAuthor;
         title = bookTitle;
         pages = bookPages;
         refNumber = "";
         borrowed = 0;
+        courseText = isCourseText;
     }
     
     // Add the methods here ...
@@ -50,6 +52,10 @@ class Book
     
     public int getBorrowed(){
         return borrowed;
+    }
+    
+    public boolean isCourseText(){
+        return courseText;
     }
     
     //setter
@@ -91,5 +97,13 @@ class Book
         
         //borrowed amount
         System.out.println("Times Borrowed: " + borrowed);
+        
+        //course text boolean
+        if (courseText) {
+            System.out.println("Course Textbook: Yes");
+        }
+        else {
+            System.out.println("Course Textbook: No");
+        }
     }
 }
